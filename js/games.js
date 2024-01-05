@@ -67,18 +67,18 @@ function update() {
     let correct = 0;
     for (let c = 0; c < width; c++){
         let currentTile = document.getElementById(row.toString()+ "-" + c);
-        let letter = currTile.innerText;
+        let letter = currentTile.innerText;
         
         //Is it in the correct positiion?
         if (word[c] == letter) {
-            title.classList.add("correct");
+            currentTile.classList.add("correct");
             correct += 1;
         } // Is it in the word?
         else if (word.includes(letter)){
-            tile.classList.add("present");
+            currentTile.classList.add("present");
         }// Not in the world
         else {
-            tile.classList.add("absent");
+            currentTile.classList.add("absent");
         }
         if (correct == width) {
             gameOver = true;
